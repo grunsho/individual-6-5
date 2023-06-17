@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}SkillBridge - Agregar Usuarios{% endblock %}
+{% block body %}
+<div class="content py-3">
+    <h1 class="mx-2 pt-4 text-center">Agregar nuevo usuario</h1>
+    <h2 class="error">{{error}}</h2>
+    <div class="row">
+        <div class="col-6">
+            <img class="image img-fluid" src="{% static 'assets/skillbridge_logo_square.png' %}" alt="bridge">
+        </div>
+        <form class="col-6 card p-5" action="" method="post">{% csrf_token %}
+            {{ form.username.label_tag }} {{ form.username }}
+            <br>
+            {{ form.password1.label_tag }} {{ form.password1 }}
+            <br>
+            {{ form.password2.label_tag }} {{ form.password2 }}
+            <br>
+            {{ form.first_name.label_tag }} {{ form.first_name }}
+            <br>
+            {{ form.last_name.label_tag }} {{ form.last_name }}
+            <br>
+            {{ form.email.label_tag }} {{ form.email }}
+            <br>
+            <button type="submit" class="btn btn-primary mt-3">Agregar Usuario</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
